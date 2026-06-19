@@ -1,0 +1,322 @@
+
+
+#root {
+    width: 100%;
+}
+
+header {
+    background: #0F172A;
+    padding: 15px 0;  /* чуть меньше, чтобы выглядело аккуратнее */
+    margin-bottom: 60px;   
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 16px;
+    color: #fff;
+}
+
+.nav a {
+    color: #E2E8F0;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav a:hover {
+    color: #4ECDC4;
+    transform: translateY(-2px);
+}
+
+.nav-btn {
+    padding: 10px 30px;   /* уменьшил, чтобы кнопка не была слишком широкой */
+    font-size: 16px;
+    background: #4ECDC4;
+    color: #fff;
+    border-radius: 12px;   /* чуть меньше, более современно */
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: #38B2AC;
+    transform: translateY(-2px);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .nav-btn {
+        padding: 8px 25px;
+        font-size: 15px;
+    }
+}
+
+
+/* === Базовые стили === */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.main-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+/* === Заголовки === */
+h2 {
+  font-size: 28px;
+  margin: 20px 0;
+  text-align: center;
+  color: #111;
+}
+
+/* === Карточки === */
+.homepage-cards,
+.concert-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center; /* центрируем карточки */
+  margin-top: 20px;
+}
+
+.homepage-card,
+.concert-card,
+.ticket {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  padding: 15px 20px;
+  width: 260px; /* фиксированная ширина */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* контент по центру */
+  text-align: center;
+}
+
+.homepage-card h3,
+.concert-card h3 {
+  margin: 10px 0;
+  font-size: 20px;
+  color: #222;
+}
+
+.homepage-card p,
+.concert-card p,
+.ticket p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+/* === Кнопки === */
+.homepage-btn,
+.book-btn,
+.retrieve-btn,
+.cancel-btn {
+  padding: 8px 16px; /* компактная кнопка */
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.homepage-btn,
+.book-btn {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.homepage-btn:hover,
+.book-btn:hover {
+  background-color: #2980b9;
+}
+
+.retrieve-btn {
+  background-color: #1abc9c;
+  color: #fff;
+}
+
+.retrieve-btn:hover {
+  background-color: #16a085;
+}
+
+.cancel-btn {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.cancel-btn:hover {
+  background-color: #c0392b;
+}
+
+/* === Формы === */
+.booking-form,
+.retrieve-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto; /* центрируем формы */
+}
+
+.booking-form input,
+.retrieve-form input,
+.booking-form select {
+  padding: 8px 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* === Списки мест (BookingPage) === */
+.seats-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.seat {
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  transition: all 0.2s;
+}
+
+.seat:hover {
+  background-color: #ecf0f1;
+}
+
+.seat.selected {
+  background-color: #27ae60;
+  color: #fff;
+  border-color: #27ae60;
+}
+
+.selected-seats {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/* Сетка мест */
+.seats-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.seat-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.row-label {
+  width: 25px;
+  font-weight: bold;
+}
+
+.seat {
+  width: 35px;
+  height: 35px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.seat:hover {
+  background: #ecf0f1;
+}
+
+.seat.selected {
+  background: #27ae60;
+  color: white;
+  border-color: #27ae60;
+}
+
+.seat.occupied {
+  background: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.seat.selected {
+  background: #3498db;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .homepage-cards,
+  .concert-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .booking-form,
+  .retrieve-form {
+    width: 90%;
+  }
+}
+
